@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scripts\buidingSpawner.cs" />
      <Compile Include="Assets\Scripts\moveBaboon.cs" />
      <Compile Include="Assets\Scripts\moveBuilding.cs" />
+     <Compile Include="Assets\Scripts\rotateCamera.cs" />
+     <Compile Include="Assets\Scripts\textControl.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

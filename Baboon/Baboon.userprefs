@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\moveBaboon.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\textControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\moveBuilding.cs" Line="36" Column="45" />
-      <File FileName="Assets\Scripts\moveBaboon.cs" Line="31" Column="31" />
+      <File FileName="Assets\Scripts\textControl.cs" Line="16" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
