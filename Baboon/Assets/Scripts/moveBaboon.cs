@@ -7,6 +7,7 @@ public class moveBaboon : MonoBehaviour {
 	public float minPosition;
 	public float maxPosition;
 	public RaycastHit hit;
+	public RaycastHit ground;
 	public int attackCooldown;
 	public int attackTimer;
 	
@@ -23,7 +24,8 @@ public class moveBaboon : MonoBehaviour {
 		transform.position = clampPos;
 
 		//Jump
-		if(Input.GetKey(KeyCode.UpArrow) && rigidbody.velocity.y <= 0){
+		Debug.DrawRay(transform.position,-transform.up*1.2f,Color.red);
+		if(Input.GetKey(KeyCode.UpArrow) && rigidbody.velocity.y <= 0 && Physics.Raycast (new Ray(transform.position,-transform.up),1.2f)){
 			rigidbody.AddForce(Vector3.up*500);
 		}
 
