@@ -31,7 +31,8 @@ public class moveBaboon : MonoBehaviour {
 
 		//Game Over
 		if(transform.position.x  <= -8){
-			Debug.Log ("Game Over");
+			transform.Translate(0,0,-1);
+			Time.timeScale = 0;
 		}
 
 		// Attack Mechanic
