@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\moveBaboon.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\buildingHealth.cs">
     <Files>
-      <File FileName="Assets\Scripts\moveBaboon.cs" Line="31" Column="5" />
-      <File FileName="Assets\Scripts\buildingHealth.cs" Line="15" Column="19" />
-      <File FileName="Assets\Scripts\attackBaboon.cs" Line="31" Column="67" />
+      <File FileName="Assets\Scripts\buildingHealth.cs" Line="30" Column="36" />
+      <File FileName="Assets\Scripts\moveBaboon.cs" Line="69" Column="2" />
+      <File FileName="Assets\Scripts\moveCamera.cs" Line="6" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

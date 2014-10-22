@@ -61,6 +61,7 @@ public class moveBaboon : MonoBehaviour {
 		AudioSource.PlayClipAtPoint(punchSound[Random.Range(0,punchSound.Length)],transform.position);
 		if (building.transform.GetComponent<buildingHealth>().health == 1){
 			AudioSource.PlayClipAtPoint(speedUpSound,transform.position);
+			score += 20;
 			speedUpTimer += 100;
 		}
 		building.transform.GetComponent<buildingHealth>().SendMessage("Damage");
