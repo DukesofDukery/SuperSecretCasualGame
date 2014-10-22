@@ -2,76 +2,65 @@
 using System.Collections;
 
 public class moveBaboon : MonoBehaviour {
-	
-	public float speed;
-	public float minPosition;
-	public float maxPosition;
+
+	public float speed = 5;
 	public RaycastHit hit;
-	public RaycastHit ground;
-	public int attackCooldown;
-	public int attackTimer;
-	
+	public AudioClip[] punchSound;
+	public AudioClip speedUpSound;
+	public int speedUpTimer;
+	bool spedUp;
+	float score;
+	public GUIStyle style;
+	Vector3 groundedSpeed  = new Vector3(0,0,0);
+
 	// Use this for initialization
 	void Start () {
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Move and Clamp Movement
-		transform.Translate(Vector3.left*Time.deltaTime*speed);
 
-		Vector3 clampPos = new Vector3 (Mathf.Clamp(transform.position.x,minPosition,maxPosition),transform.position.y,transform.position.z);
-		transform.position = clampPos;
+		transform.Translate(Vector3.right*Time.deltaTime*speed);
 
-		//Jump
-		Debug.DrawRay(transform.position,-transform.up*1.2f,Color.red);
-		if(Input.GetKey(KeyCode.UpArrow) && rigidbody.velocity.y <= 0 && Physics.Raycast (new Ray(transform.position,-transform.up),1.2f)){
-			rigidbody.AddForce(Vector3.up*500);
+		score += 0.1f;
+
+		Debug.DrawRay(transform.position,-transform.up*1.3f,Color.red);
+		if(Physics.Raycast (new Ray(transform.position,-transform.up),1.3f)){
+			if(Input.GetKey(KeyCode.UpArrow)){
+				rigidbody.AddForce(Vector3.up*500);
+			} else {
+				rigidbody.velocity = groundedSpeed;
+			}
 		}
 
-		//Game Over
-		if(transform.position.x  <= -8){
-			transform.Translate(0,0,-1);
-			Time.timeScale = 0;
+		Debug.DrawRay(transform.position,transform.right*2.5f,Color.blue);
+		if (Physics.Raycast (new Ray(transform.position,transform.right),out hit,2.5f)){
+			speed = 0;
+			speedUpTimer = 0;
+			if(Input.GetKeyDown(KeyCode.Space)){
+				Attack(hit);
+			}
+		} else if(speedUpTimer == 0) {
+			speed = 5;
 		}
 
-		// Attack Mechanic
-		if(Input.GetKeyDown(KeyCode.Space) && attackTimer == 0){
-			attackTimer = attackCooldown;
-			Attack();
+		if(speedUpTimer > 0){
+			speedUpTimer--;
+			speed = 10;
 		}
-
-		if(attackTimer != 0){
-			attackTimer --;
-		}
-
 	}
 
 	void OnGUI(){
-		GUI.HorizontalSlider (new Rect(20,20,100,20),transform.position.x,minPosition,maxPosition);
-		GUI.Box(new Rect(20,40,135,22),"Attack Cooldown: "+attackTimer);
+		GUI.Label(new Rect(Screen.width/2-50,30,100,100),((int)score).ToString(),style);
 	}
 
-	void OnTriggerEnter(Collider building){
-		if(building.gameObject.tag == "Building"){
-			speed = building.GetComponent<moveBuilding>().speed;
+	void Attack(RaycastHit building) {
+		AudioSource.PlayClipAtPoint(punchSound[Random.Range(0,punchSound.Length)],transform.position);
+		if (building.transform.GetComponent<buildingHealth>().health == 1){
+			AudioSource.PlayClipAtPoint(speedUpSound,transform.position);
+			speedUpTimer += 100;
 		}
-	}
-
-	void OnTriggerExit(Collider building){
-		if(building.gameObject.tag == "Building"){
-			speed = 0;
-		}
-	}
-
-	void Attack(){
-		if(Physics.Raycast(transform.position,Vector3.right*2,out hit,2)){
-			if(hit.collider.tag == "Building"){
-				hit.transform.GetComponent<moveBuilding>().health --;
-				if(hit.transform.GetComponent<moveBuilding>().health == 0){
-					speed = 0;
-				}
-			}
-		}
+		building.transform.GetComponent<buildingHealth>().SendMessage("Damage");
 	}
 }

@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: bc1615b4d218ac24f83baf6b22c98bf5
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FullBuildingSpriteSheet_0
+    21300002: FullBuildingSpriteSheet_1
+    21300004: FullBuildingSpriteSheet_2
+    21300006: FullBuildingSpriteSheet_3
+    21300008: FullBuildingSpriteSheet_4
+    21300010: FullBuildingSpriteSheet_5
+    21300012: FullBuildingSpriteSheet_6
+    21300014: FullBuildingSpriteSheet_7
+    21300016: FullBuildingSpriteSheet_8
+    21300018: FullBuildingSpriteSheet_9
+    21300020: FullBuildingSpriteSheet_10
+    21300022: FullBuildingSpriteSheet_11
+    21300024: FullBuildingSpriteSheet_12
+    21300026: FullBuildingSpriteSheet_13
+    21300028: FullBuildingSpriteSheet_14
+    21300030: FullBuildingSpriteSheet_15
+    21300032: FullBuildingSpriteSheet_16
+    21300034: FullBuildingSpriteSheet_17
+    21300036: FullBuildingSpriteSheet_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FullBuildingSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 2641
+        width: 293
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 2641
+        width: 293
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 2641
+        width: 293
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 2641
+        width: 296
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1962
+        width: 311
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2389
+        width: 5
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 2394
+        width: 5
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 2371
+        width: 171
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 2212
+        width: 8
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1962
+        width: 244
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1831
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1117
+        width: 279
+        height: 707
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1117
+        width: 290
+        height: 707
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1117
+        width: 287
+        height: 566
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1117
+        width: 264
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 36
+        width: 276
+        height: 954
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 33
+        width: 276
+        height: 906
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 36
+        width: 276
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullBuildingSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 36
+        width: 276
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
