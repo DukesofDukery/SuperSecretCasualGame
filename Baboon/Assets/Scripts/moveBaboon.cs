@@ -27,8 +27,10 @@ public class moveBaboon : MonoBehaviour {
 
 		Debug.DrawRay(transform.position,-transform.up*1.3f,Color.red);
 		if(Physics.Raycast (new Ray(transform.position,-transform.up),1.3f)){
-			if(Input.GetKey(KeyCode.UpArrow)){
-				rigidbody.AddForce(Vector3.up*500);
+			if(Input.GetKey(KeyCode.UpArrow) && Mathf.RoundToInt(rigidbody.velocity.y) == 0){
+
+				rigidbody.AddForce(Vector3.up*1700);
+
 			} else {
 				rigidbody.velocity = groundedSpeed;
 			}
