@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\buidingSpawner.cs" />
      <Compile Include="Assets\Scripts\buildingHealth.cs" />
      <Compile Include="Assets\Scripts\expireObject.cs" />
+     <Compile Include="Assets\Scripts\floorSpawner.cs" />
      <Compile Include="Assets\Scripts\moveBaboon.cs" />
      <Compile Include="Assets\Scripts\moveCamera.cs" />
      <Compile Include="Assets\Scripts\rotateCamera.cs" />

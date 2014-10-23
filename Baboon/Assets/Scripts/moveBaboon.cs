@@ -26,7 +26,7 @@ public class moveBaboon : MonoBehaviour {
 		score += 0.1f;
 
 		Debug.DrawRay(transform.position,-transform.up*1.3f,Color.red);
-		if(Physics.Raycast (new Ray(transform.position,-transform.up),1.3f)){
+		if(Physics.Raycast(new Ray(transform.position,-transform.up),1.3f)){
 			if(Input.GetKey(KeyCode.UpArrow) && Mathf.RoundToInt(rigidbody.velocity.y) == 0){
 
 				rigidbody.AddForce(Vector3.up*1700);
@@ -38,10 +38,12 @@ public class moveBaboon : MonoBehaviour {
 
 		Debug.DrawRay(transform.position,transform.right*2.5f,Color.blue);
 		if (Physics.Raycast (new Ray(transform.position,transform.right),out hit,2.5f)){
-			speed = 0;
-			speedUpTimer = 0;
-			if(Input.GetKeyDown(KeyCode.Space)){
-				Attack(hit);
+			if(hit.transform.tag == "Building"){
+				speed = 0;
+				speedUpTimer = 0;
+				if(Input.GetKeyDown(KeyCode.Space)){
+					Attack(hit);
+				}
 			}
 		} else if(speedUpTimer == 0) {
 			speed = 5;
