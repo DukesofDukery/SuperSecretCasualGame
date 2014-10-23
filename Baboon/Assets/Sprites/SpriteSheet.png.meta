@@ -18,8 +18,6 @@ TextureImporter:
     21300026: SpriteSheet_14
     21300028: SpriteSheet_15
     21300030: SpriteSheet_15
-    21300032: SpriteSheet_9
-    21300034: uppercut
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -151,16 +149,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 596
-        y: 484
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpriteSheet_10
       rect:
         serializedVersion: 2
@@ -221,13 +209,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: uppercut
+    - name: SpriteSheet_15
       rect:
         serializedVersion: 2
-        x: 156
-        y: 335
-        width: 496
-        height: 89
+        x: 520
+        y: 441
+        width: 103
+        height: 74
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
