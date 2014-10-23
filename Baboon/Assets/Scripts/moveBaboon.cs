@@ -36,8 +36,8 @@ public class moveBaboon : MonoBehaviour {
 			}
 		}
 
-		Debug.DrawRay(transform.position,transform.right*2.5f,Color.blue);
-		if (Physics.Raycast (new Ray(transform.position,transform.right),out hit,2.5f)){
+		Debug.DrawRay(transform.position,transform.right*2f,Color.blue);
+		if (Physics.SphereCast (new Ray(transform.position,transform.right),1.5f,out hit,1.5f)){
 			if(hit.transform.tag == "Building"){
 				speed = 0;
 				speedUpTimer = 0;
@@ -68,4 +68,18 @@ public class moveBaboon : MonoBehaviour {
 		}
 		building.transform.GetComponent<buildingHealth>().SendMessage("Damage");
 	}
+
+	/*void OnCollisionEnter(Collision collider){
+		if(collider.gameObject.tag == "Building"){
+			if(collider.transform.tag == "Building"){
+				speed = 0;
+				speedUpTimer = 0;
+				if(Input.GetKeyDown(KeyCode.Space)){
+					Attack(hit);
+				}
+			}
+		} else if(speedUpTimer == 0) {
+			speed = 5;
+		}
+	}*/
 }
