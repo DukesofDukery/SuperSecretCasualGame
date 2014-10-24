@@ -26,6 +26,6 @@ public class buildingHealth : MonoBehaviour {
 	}
 
 	void Damage(){
-		health--;
+		health --;
 	}
 }

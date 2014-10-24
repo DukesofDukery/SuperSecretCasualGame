@@ -8,6 +8,7 @@ public class moveBaboon : MonoBehaviour {
 	public AudioClip[] punchSound;
 	public AudioClip speedUpSound;
 	public int speedUpTimer;
+	public int jumpTimer;
 	bool spedUp;
 	float score;
 	public GUIStyle style;
@@ -23,14 +24,12 @@ public class moveBaboon : MonoBehaviour {
 
 		transform.Translate(Vector3.right*Time.deltaTime*speed);
 
-		score += 0.1f;
+		score += 0.1f*Time.timeScale;
 
 		Debug.DrawRay(transform.position,-transform.up*1.3f,Color.red);
 		if(Physics.Raycast(new Ray(transform.position,-transform.up),1.3f)){
 			if(Input.GetKey(KeyCode.UpArrow) && Mathf.RoundToInt(rigidbody.velocity.y) == 0){
-
-				rigidbody.AddForce(Vector3.up*1700);
-
+				jumpTimer = 75;
 			} else {
 				rigidbody.velocity = groundedSpeed;
 			}
@@ -49,9 +48,38 @@ public class moveBaboon : MonoBehaviour {
 			speed = 5;
 		}
 
+		//UPPERCUT
+		if(Input.GetKeyDown(KeyCode.W) && Mathf.RoundToInt(rigidbody.velocity.y) == 0){
+			GetComponent<Animator>().Play("uppercut");
+			rigidbody.AddForce(Vector3.up*2200);
+			rigidbody.AddForce(Vector3.right*10);
+			
+			if(Physics.Raycast(transform.position,Vector3.right,out hit,4f)){
+				hit.transform.GetComponent<buildingHealth>().health = hit.transform.GetComponent<buildingHealth>().health-2;
+				AudioSource.PlayClipAtPoint(punchSound[0],transform.position);
+			}
+			
+		}
+		//BUTT SLAM
+		if(Input.GetKeyDown(KeyCode.S) && rigidbody.velocity.y <= 0){
+			GetComponent<Animator>().Play("slam");
+			rigidbody.AddForce(Vector3.down*6000);
+			rigidbody.AddForce(Vector3.right*50);
+			
+			if(Physics.Raycast(transform.position,Vector3.down*10,out hit,10)){
+				AudioSource.PlayClipAtPoint(punchSound[0],transform.position);
+				hit.transform.GetComponent<buildingHealth>().health = hit.transform.GetComponent<buildingHealth>().health-4;
+			}
+		}
+
 		if(speedUpTimer > 0){
 			speedUpTimer--;
 			speed = 10;
+		}
+
+		if(jumpTimer != 0){
+			jumpTimer--;
+			transform.Translate(Vector3.up*Time.deltaTime*10);
 		}
 	}
 
@@ -61,6 +89,7 @@ public class moveBaboon : MonoBehaviour {
 
 	void Attack(RaycastHit building) {
 		AudioSource.PlayClipAtPoint(punchSound[Random.Range(0,punchSound.Length)],transform.position);
+		GetComponent<Animator>().Play("punch");
 		if (building.transform.GetComponent<buildingHealth>().health == 1){
 			AudioSource.PlayClipAtPoint(speedUpSound,transform.position);
 			score += 20;
@@ -68,18 +97,4 @@ public class moveBaboon : MonoBehaviour {
 		}
 		building.transform.GetComponent<buildingHealth>().SendMessage("Damage");
 	}
-
-	/*void OnCollisionEnter(Collision collider){
-		if(collider.gameObject.tag == "Building"){
-			if(collider.transform.tag == "Building"){
-				speed = 0;
-				speedUpTimer = 0;
-				if(Input.GetKeyDown(KeyCode.Space)){
-					Attack(hit);
-				}
-			}
-		} else if(speedUpTimer == 0) {
-			speed = 5;
-		}
-	}*/
 }

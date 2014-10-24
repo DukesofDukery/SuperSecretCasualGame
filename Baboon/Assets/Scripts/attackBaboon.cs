@@ -18,6 +18,7 @@ public class attackBaboon : MonoBehaviour {
 		
 		//UPPERCUT
 		if(Input.GetKeyDown(KeyCode.W) && Mathf.RoundToInt(rigidbody.velocity.y) == 0){
+			GetComponent<Animator>().Play("uppercut");
 			rigidbody.AddForce(Vector3.up*2200);
 			rigidbody.AddForce(Vector3.right*10);
 			
@@ -32,7 +33,7 @@ public class attackBaboon : MonoBehaviour {
 		}
 		//BUTT SLAM
 		if(Input.GetKeyDown(KeyCode.S) && rigidbody.velocity.y <= 0){
-			
+			GetComponent<Animator>().Play("slam");
 			rigidbody.AddForce(Vector3.down*6000);
 			rigidbody.AddForce(Vector3.right*50);
 			
