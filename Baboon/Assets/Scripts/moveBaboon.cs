@@ -40,7 +40,7 @@ public class moveBaboon : MonoBehaviour {
 			if(hit.transform.tag == "Building"){
 				speed = 0;
 				speedUpTimer = 0;
-				if(Input.GetKeyDown(KeyCode.Space)){
+				if(Input.GetKeyDown(KeyCode.Q)){
 					Attack(hit);
 				}
 			}
@@ -61,7 +61,7 @@ public class moveBaboon : MonoBehaviour {
 			
 		}
 		//BUTT SLAM
-		if(Input.GetKeyDown(KeyCode.S) && rigidbody.velocity.y <= 0){
+		if(Input.GetKeyDown(KeyCode.E) && rigidbody.velocity.y <= 0){
 			GetComponent<Animator>().Play("slam");
 			rigidbody.AddForce(Vector3.down*6000);
 			rigidbody.AddForce(Vector3.right*50);
