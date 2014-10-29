@@ -17,7 +17,7 @@ public class buidingSpawner : MonoBehaviour {
 
 	//Spawn buildings
 	IEnumerator spawnBuilding(){
-		yield return new WaitForSeconds (Random.Range(2,3));
+		yield return new WaitForSeconds (Random.Range(2f,4f));
 		Instantiate(buildings[Random.Range(0,buildings.Length)],transform.position,transform.rotation);
 		StartCoroutine(spawnBuilding());
 	}
