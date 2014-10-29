@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 81a524f9ae99edf43a21a646e55e85da
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BackgroundSpriteSheet_22
+    21300002: BackgroundSpriteSheet_23
+    21300004: BackgroundSpriteSheet_24
+    21300006: BackgroundSpriteSheet_30
+    21300008: BackgroundSpriteSheet_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BackgroundSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 566
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BackgroundSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 568
+        width: 20
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BackgroundSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 564
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BackgroundSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 87
+        width: 1200
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BackgroundSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 561
+        width: 1273
+        height: 142
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -46,15 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\aestheticSpawner.cs" />
      <Compile Include="Assets\Scripts\attackBaboon.cs" />
      <Compile Include="Assets\Scripts\buidingSpawner.cs" />
      <Compile Include="Assets\Scripts\buildingHealth.cs" />
      <Compile Include="Assets\Scripts\expireObject.cs" />
      <Compile Include="Assets\Scripts\floorSpawner.cs" />
      <Compile Include="Assets\Scripts\killBox.cs" />
+     <Compile Include="Assets\Scripts\moveAesthetics.cs" />
      <Compile Include="Assets\Scripts\moveBaboon.cs" />
      <Compile Include="Assets\Scripts\moveCamera.cs" />
      <Compile Include="Assets\Scripts\rotateCamera.cs" />
+     <Compile Include="Assets\Scripts\spawnBackground.cs" />
      <Compile Include="Assets\Scripts\textControl.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />

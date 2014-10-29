@@ -14,6 +14,8 @@ public class moveBaboon : MonoBehaviour {
 	public GUIStyle style;
 	Vector3 groundedSpeed  = new Vector3(0,0,0);
 
+	public Transform deadZone;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -85,6 +87,7 @@ public class moveBaboon : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.Label(new Rect(Screen.width/2-50,30,100,100),((int)score).ToString(),style);
+		GUI.HorizontalSlider(new Rect(20,Screen.height-20,Screen.width-40,20),transform.position.x-deadZone.position.x,3f,40f);
 	}
 
 	void Attack(RaycastHit building) {
