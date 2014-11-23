@@ -21,7 +21,7 @@ public class aestheticSpawner : MonoBehaviour {
 	}
 
 	IEnumerator spawnCloud(){
-		Instantiate(clouds[Random.Range(0,2)],new Vector3(baboon.transform.position.x + 50,clouds[Random.Range(0,2)].transform.position.y,0),
+		Instantiate(clouds[Random.Range(0,2)],new Vector3(baboon.transform.position.x + 50,clouds[Random.Range(0,2)].transform.position.y + Random.Range(-3,3),0),
 		            clouds[Random.Range(0,2)].transform.rotation);
 		yield return new WaitForSeconds (Random.Range(2,5));
 		StartCoroutine(spawnCloud());

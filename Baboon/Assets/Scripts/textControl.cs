@@ -12,7 +12,7 @@ public class textControl : MonoBehaviour {
 
 	void OnMouseEnter(){
 		//change the color of the text
-		renderer.material.color = Color.black;
+		renderer.material.color = Color.red;
 	}
 
 	void OnMouseExit(){
