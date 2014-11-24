@@ -13,6 +13,8 @@ public class moveBaboon : MonoBehaviour {
 	float score;
 	public GUIStyle style;
 	Vector3 groundedSpeed  = new Vector3(0,0,0);
+	public int qTimer=0;
+
 
 	public Transform deadZone;
 
@@ -31,9 +33,10 @@ public class moveBaboon : MonoBehaviour {
 		Debug.DrawRay(transform.position,-transform.up*1.3f,Color.red);
 		if(Physics.Raycast(new Ray(transform.position,-transform.up),1.3f)){
 			if(Input.GetKey(KeyCode.UpArrow) && Mathf.RoundToInt(rigidbody.velocity.y) == 0){
-				jumpTimer = 75;
+				jumpTimer = 60;
+
 			} else {
-				rigidbody.velocity = groundedSpeed;
+				//rigidbody.velocity = groundedSpeed;
 			}
 		}
 
@@ -43,7 +46,10 @@ public class moveBaboon : MonoBehaviour {
 				speed = 0;
 				speedUpTimer = 0;
 				if(Input.GetKeyDown(KeyCode.Q)){
-					Attack(hit);
+					if(qTimer==0){
+						Attack(hit);
+						qTimer=10;
+					}
 				}
 			}
 		} else if(speedUpTimer == 0) {
@@ -53,8 +59,7 @@ public class moveBaboon : MonoBehaviour {
 		//UPPERCUT
 		if(Input.GetKeyDown(KeyCode.W) && Mathf.RoundToInt(rigidbody.velocity.y) == 0){
 			GetComponent<Animator>().Play("uppercut");
-			rigidbody.AddForce(Vector3.up*2200);
-			rigidbody.AddForce(Vector3.right*10);
+			jumpTimer = 50;
 			
 			if(Physics.Raycast(transform.position,Vector3.right,out hit,4f)){
 				hit.transform.GetComponent<buildingHealth>().health = hit.transform.GetComponent<buildingHealth>().health-2;
@@ -63,7 +68,7 @@ public class moveBaboon : MonoBehaviour {
 			
 		}
 		//BUTT SLAM
-		if(Input.GetKeyDown(KeyCode.E) && rigidbody.velocity.y <= 0){
+		/*if(Input.GetKeyDown(KeyCode.E) && rigidbody.velocity.y <= 0){
 			GetComponent<Animator>().Play("slam");
 			rigidbody.AddForce(Vector3.down*6000);
 			rigidbody.AddForce(Vector3.right*50);
@@ -72,17 +77,25 @@ public class moveBaboon : MonoBehaviour {
 				AudioSource.PlayClipAtPoint(punchSound[0],transform.position);
 				hit.transform.GetComponent<buildingHealth>().health = hit.transform.GetComponent<buildingHealth>().health-4;
 			}
-		}
+		}*/
 
 		if(speedUpTimer > 0){
 			speedUpTimer--;
 			speed = 10;
 		}
 
-		if(jumpTimer != 0){
-			jumpTimer--;
-			transform.Translate(Vector3.up*Time.deltaTime*10);
+		if (jumpTimer != 0) {
+				jumpTimer--;
+				transform.Translate (Vector3.up * Time.deltaTime * jumpTimer / 3);
+			if(jumpTimer==1){
+				//rigidbody.AddForce(Vector3.down*2000);
+			}
 		}
+
+		if(qTimer>0){
+			qTimer--;
+		}
+
 	}
 
 	void OnGUI(){
