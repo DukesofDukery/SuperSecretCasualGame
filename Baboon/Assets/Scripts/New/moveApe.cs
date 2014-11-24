@@ -12,6 +12,8 @@ public class moveApe : MonoBehaviour {
 	public AudioClip[] sfxs;
 	public Transform deadZone;
 	ParticleSystem particles;
+	float qTimer=0f;
+	float changeAnimWait=0f;
 
 	int xOffset = 1061;
 	int yOffset = 597;
@@ -20,10 +22,16 @@ public class moveApe : MonoBehaviour {
 	void Start () {
 		deadZone = GameObject.Find("Kill Box").transform;
 		particles = transform.GetChild(0).particleSystem;
+		//Increased gravity
+		Physics.gravity = new Vector3(0, -100.0F, 0);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		print (changeAnimWait);
+		qTimer = qTimer - Time.deltaTime;
+		changeAnimWait = changeAnimWait - Time.deltaTime;
 
 		if(speed == 10){
 			StartCoroutine(slowDown());
@@ -40,24 +48,30 @@ public class moveApe : MonoBehaviour {
 		//Punch
 		if(Input.GetKeyDown(KeyCode.Q)){
 			GetComponent<Animator>().Play("punch");
+			changeAnimWait=5f;
 			if(Physics.Raycast(transform.position,Vector3.right,5f,layerMask)){
-				AudioSource.PlayClipAtPoint(sfxs[0],transform.position);
-				Physics.Raycast(transform.position,Vector3.right,out buildingHit,5f,layerMask);
-				if(buildingHit.transform.GetComponent<buildingHealth>().health -1 <= 0 && speed == 5){
-					score += 10;
-					AudioSource.PlayClipAtPoint(sfxs[1],transform.position);
-					speed = 10;
+				if(qTimer<=0){
+					AudioSource.PlayClipAtPoint(sfxs[0],transform.position);
+					Physics.Raycast(transform.position,Vector3.right,out buildingHit,5f,layerMask);
+					if(buildingHit.transform.GetComponent<buildingHealth>().health -1 <= 0 && speed == 5){
+						score += 10;
+						AudioSource.PlayClipAtPoint(sfxs[1],transform.position);
+						speed = 10;
+					}
+					buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Punch");
+					qTimer=.15f;
+
 				}
-				buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Punch");
 			}
 		}
 		
 		//Uppercut
 		if(Input.GetKeyDown(KeyCode.W)){
 			GetComponent<Animator>().Play("uppercut");
+			changeAnimWait=5f;
 			if(isGrounded){
 				isGrounded = false;
-				rigidbody.AddForce(Vector3.up*4000);
+				rigidbody.AddForce(Vector3.up*12000);
 			}
 			
 			if(Physics.Raycast(transform.position,Vector3.right,5f,layerMask)){
@@ -69,12 +83,15 @@ public class moveApe : MonoBehaviour {
 					speed = 10;
 				}
 				buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Uppercut");
+
 			}
 		}
 		
 		//Slam
 		if(Input.GetKeyDown(KeyCode.E)){
+
 			GetComponent<Animator>().Play("slam");
+			changeAnimWait=5f;
 			if(!isGrounded){
 				rigidbody.AddForce(Vector3.down*5000);
 			}
@@ -87,13 +104,14 @@ public class moveApe : MonoBehaviour {
 					speed = 10;
 				}
 				buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Slam");
+
 			}
 		}
 
 		if(Input.GetKeyDown(KeyCode.UpArrow) && isGrounded){
 			isGrounded = false;
 			rigidbody.velocity = new Vector3(0,0,0);
-			rigidbody.AddForce(Vector3.up*5000);
+			rigidbody.AddForce(Vector3.up*20000);
 		}
 		
 		if(Physics.Raycast(transform.position,Vector3.down,1.5f,layerMask)){
@@ -109,8 +127,10 @@ public class moveApe : MonoBehaviour {
 		}
 
 		if(!isGrounded){
-			GetComponent<Animator>().Play("falling");
-		} else {
+			if(changeAnimWait<=0){
+				GetComponent<Animator>().Play("falling");
+			}
+		} else if(changeAnimWait<=0) {
 			GetComponent<Animator>().Play("run");
 		}
 	}
