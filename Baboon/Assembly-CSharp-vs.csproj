@@ -49,12 +49,12 @@
      <Compile Include="Assets\Scripts\New\moveApe.cs" />
      <Compile Include="Assets\Scripts\New\moveCivi.cs" />
      <Compile Include="Assets\Scripts\aestheticSpawner.cs" />
-     <Compile Include="Assets\Scripts\attackBaboon.cs" />
      <Compile Include="Assets\Scripts\buidingSpawner.cs" />
      <Compile Include="Assets\Scripts\buildingHealth.cs" />
      <Compile Include="Assets\Scripts\expireObject.cs" />
      <Compile Include="Assets\Scripts\floorSpawner.cs" />
      <Compile Include="Assets\Scripts\killBox.cs" />
+     <Compile Include="Assets\Scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\moveAesthetics.cs" />
      <Compile Include="Assets\Scripts\moveBaboon.cs" />
      <Compile Include="Assets\Scripts\moveCamera.cs" />

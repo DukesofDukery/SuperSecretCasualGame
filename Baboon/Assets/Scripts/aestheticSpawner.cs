@@ -30,12 +30,12 @@ public class aestheticSpawner : MonoBehaviour {
 
 	IEnumerator spawnFoliage(){
 		Instantiate(foliage,new Vector3(baboon.transform.position.x + 50,foliage.transform.position.y,0), foliage.transform.rotation);
-		yield return new WaitForSeconds (3.9f);
+		yield return new WaitForSeconds (2f);
 		StartCoroutine(spawnFoliage());
 	}
 
 	IEnumerator spawnCivi(){
-		Instantiate(civis[Random.Range(0,civis.Length)],new Vector3(baboon.transform.position.x + 50,civis[Random.Range(0,civis.Length)].transform.position.y,0), civis[Random.Range(0,civis.Length)].transform.rotation);
+		Instantiate(civis[Random.Range(0,civis.Length)],new Vector3(baboon.transform.position.x + 50,0,0), civis[Random.Range(0,civis.Length)].transform.rotation);
 		yield return new WaitForSeconds (Random.Range(1,3));
 		StartCoroutine(spawnCivi());
 	}

@@ -4,12 +4,14 @@ using System.Collections;
 public class moveCivi : MonoBehaviour {
 
 	public int move;
+	public AudioClip squish;
 
 	// Use this for initialization
 	void Start () {
 		move = Random.Range(0,2);
 		StartCoroutine(changeDirection());
 		Physics.IgnoreCollision(gameObject.collider,GameObject.Find("Baboon").collider);
+		Physics.IgnoreLayerCollision(9,9,true);
 	}
 	
 	// Update is called once per frame
@@ -31,6 +33,8 @@ public class moveCivi : MonoBehaviour {
 	}
 
 	IEnumerator Die(){
+		AudioSource.PlayClipAtPoint(squish,transform.position);
+		GameObject.Find("Baboon").GetComponent<moveApe>().score ++;
 		renderer.enabled = false;
 		particleSystem.Emit(10);
 		yield return new WaitForSeconds(2);

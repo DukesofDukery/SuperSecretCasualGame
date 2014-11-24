@@ -67,17 +67,6 @@ public class moveBaboon : MonoBehaviour {
 			}
 			
 		}
-		//BUTT SLAM
-		/*if(Input.GetKeyDown(KeyCode.E) && rigidbody.velocity.y <= 0){
-			GetComponent<Animator>().Play("slam");
-			rigidbody.AddForce(Vector3.down*6000);
-			rigidbody.AddForce(Vector3.right*50);
-			
-			if(Physics.Raycast(transform.position,Vector3.down*10,out hit,10)){
-				AudioSource.PlayClipAtPoint(punchSound[0],transform.position);
-				hit.transform.GetComponent<buildingHealth>().health = hit.transform.GetComponent<buildingHealth>().health-4;
-			}
-		}*/
 
 		if(speedUpTimer > 0){
 			speedUpTimer--;
