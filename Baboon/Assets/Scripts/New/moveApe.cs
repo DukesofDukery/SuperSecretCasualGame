@@ -33,10 +33,6 @@ public class moveApe : MonoBehaviour {
 		qTimer = qTimer - Time.deltaTime;
 		changeAnimWait = changeAnimWait - Time.deltaTime;
 
-		if(speed == 10){
-			StartCoroutine(slowDown());
-		}
-
 		if(!isGrounded){
 			particles.Play();
 		}
@@ -57,6 +53,7 @@ public class moveApe : MonoBehaviour {
 						score += 10;
 						AudioSource.PlayClipAtPoint(sfxs[1],transform.position);
 						speed = 10;
+						StartCoroutine(slowDown());
 					}
 					buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Punch");
 					qTimer=.15f;
@@ -81,6 +78,7 @@ public class moveApe : MonoBehaviour {
 					score += 10;
 					AudioSource.PlayClipAtPoint(sfxs[1],transform.position);
 					speed = 10;
+					StartCoroutine(slowDown());
 				}
 				buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Uppercut");
 
@@ -102,6 +100,7 @@ public class moveApe : MonoBehaviour {
 					score += 10;
 					AudioSource.PlayClipAtPoint(sfxs[1],transform.position);
 					speed = 10;
+					StartCoroutine(slowDown());
 				}
 				buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Slam");
 
