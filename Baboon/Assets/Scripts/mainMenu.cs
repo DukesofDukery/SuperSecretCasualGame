@@ -22,11 +22,11 @@ public class mainMenu : MonoBehaviour {
 		Matrix4x4 svMat = GUI.matrix;
 		GUI.matrix = Matrix4x4.TRS(new Vector3(0,0,0), Quaternion.identity,new Vector3(Screen.width/(float)xOffset,Screen.height/(float)yOffset,1f));
 
-		if(GUI.Button(new Rect (xOffset/2-300,yOffset/2-50,200,100),"Play",skin.button)){
+		if(GUI.Button(new Rect (xOffset/2+100,yOffset/2-60,120,84),"Play",skin.button)){
 			Application.LoadLevel(1);
 		}
 
-		if(GUI.Button(new Rect (xOffset/2+100,yOffset/2-50,200,100),"Quit",skin.button)){
+		if(GUI.Button(new Rect (xOffset/2+100,yOffset/2+40,120,84),"Quit",skin.button)){
 			Application.Quit();
 		}
 

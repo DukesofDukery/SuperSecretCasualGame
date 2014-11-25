@@ -1,13 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\New\moveApe.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\buildingHealth.cs">
     <Files>
-      <File FileName="Baboon.sln" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\New\moveApe.cs" Line="51" Column="20" />
-      <File FileName="Assets\Scripts\buildingHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\killBox.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\New\moveCivi.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\mainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\mainMenu.cs" Line="29" Column="52" />
+      <File FileName="Assets\Scripts\buildingHealth.cs" Line="27" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
