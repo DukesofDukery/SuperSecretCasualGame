@@ -14,6 +14,7 @@ public class moveApe : MonoBehaviour {
 	ParticleSystem particles;
 	float qTimer=0f;
 	float changeAnimWait=0f;
+	public static float spawnTimer=0f;
 
 	int xOffset = 1061;
 	int yOffset = 597;
@@ -29,10 +30,11 @@ public class moveApe : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print (changeAnimWait);
+		//print (changeAnimWait);
 		qTimer = qTimer - Time.deltaTime;
 		changeAnimWait = changeAnimWait - Time.deltaTime;
-
+		spawnTimer=spawnTimer+Time.deltaTime;
+		print (spawnTimer);
 		if(!isGrounded){
 			particles.Play();
 		}
@@ -64,24 +66,27 @@ public class moveApe : MonoBehaviour {
 		
 		//Uppercut
 		if(Input.GetKeyDown(KeyCode.W)){
+
 			GetComponent<Animator>().Play("uppercut");
 			changeAnimWait=5f;
 			if(isGrounded){
 				isGrounded = false;
 				rigidbody.AddForce(Vector3.up*12000);
-			}
 			
-			if(Physics.Raycast(transform.position,Vector3.right,5f,layerMask)){
-				AudioSource.PlayClipAtPoint(sfxs[0],transform.position);
-				Physics.Raycast(transform.position,Vector3.right,out buildingHit,5f,layerMask);
-				if(buildingHit.transform.GetComponent<buildingHealth>().health - 2 <= 0 && speed == 5){
-					score += 10;
-					AudioSource.PlayClipAtPoint(sfxs[1],transform.position);
-					speed = 10;
-					StartCoroutine(slowDown());
-				}
-				buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Uppercut");
+			
+				if(Physics.Raycast(transform.position,Vector3.right,5f,layerMask)){
+					AudioSource.PlayClipAtPoint(sfxs[0],transform.position);
+					Physics.Raycast(transform.position,Vector3.right,out buildingHit,5f,layerMask);
+					if(buildingHit.transform.GetComponent<buildingHealth>().health - 2 <= 0 && speed == 5){
+						score += 10;
+						AudioSource.PlayClipAtPoint(sfxs[1],transform.position);
+						speed = 10;
+						StartCoroutine(slowDown());
+					}
+					buildingHit.transform.GetComponent<buildingHealth>().SendMessage("Uppercut");
+					print ("uppercut");
 
+				}
 			}
 		}
 		
